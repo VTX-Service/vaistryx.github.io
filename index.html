@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT & Technik Service Vaistryx</title>
+  <meta
+    name="description"
+    content="IT & Technik Service Vaistryx – Hilfe bei PC- und Laptop-Problemen, Reinigung, Diagnose, Neuinstallation und Upgrades."
+  />
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0d0d12;
+      --card: rgba(255,255,255,0.04);
+      --card-2: rgba(255,255,255,0.025);
+      --text: #f5f5f7;
+      --muted: #b8b8c2;
+      --muted-2: #9696a3;
+      --line: rgba(255,255,255,0.08);
+      --purple: #9d4edd;
+      --purple-2: #c77dff;
+      --purple-3: #7b2cbf;
+      --glow: 0 0 18px rgba(157, 78, 221, 0.42), 0 0 38px rgba(157, 78, 221, 0.16);
+      --radius: 22px;
+      --max: 1180px;
+      --shadow: 0 18px 50px rgba(0,0,0,0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(157,78,221,0.16), transparent 24%),
+        radial-gradient(circle at 85% 0%, rgba(199,125,255,0.09), transparent 18%),
+        radial-gradient(circle at 50% 100%, rgba(123,44,191,0.10), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 5, 5, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(157,78,221,0.24), rgba(199,125,255,0.08));
+      border: 1px solid rgba(199,125,255,0.35);
+      box-shadow: var(--glow);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--purple-3), var(--purple));
+      border: 1px solid rgba(199,125,255,0.3);
+      box-shadow: var(--glow);
+      font-weight: 700;
+      font-size: 14px;
+      color: white !important;
+    }
+
+    .hero {
+      padding: 88px 0 68px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(199,125,255,0.22);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      color: #ddd;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--purple-2);
+      box-shadow: 0 0 10px var(--purple-2);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 0.96;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 .glow {
+      color: white;
+      text-shadow: 0 0 18px rgba(199,125,255,0.42), 0 0 45px rgba(157,78,221,0.16);
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 700px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--purple-3), var(--purple));
+      box-shadow: var(--glow);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.08);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(199,125,255,0.26);
+      transform: translateY(-2px);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .hero-point {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.42);
+    }
+
+    .logo-box {
+      min-height: 220px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(199,125,255,0.16), transparent 42%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(199,125,255,0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 18px;
+      overflow: hidden;
+    }
+
+    .logo-box img {
+      max-width: 100%;
+      width: 260px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 16px;
+      opacity: 0.95;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding: 36px 0 82px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin: 0 0 10px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-text {
+      margin: 0 0 30px;
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 17px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: 0.25s ease;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(199,125,255,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      color: #eee;
+      background: rgba(157,78,221,0.12);
+      border: 1px solid rgba(199,125,255,0.2);
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .about-side {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .list-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--card-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+    }
+
+    .highlight-line {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(157,78,221,0.1);
+      border: 1px solid rgba(199,125,255,0.18);
+      color: #efdefd;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq details {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 16px 18px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .faq details:hover {
+      border-color: rgba(199,125,255,0.26);
+      transform: translateY(-1px);
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+      position: relative;
+      padding-right: 30px;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::after {
+      content: "⌄";
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: var(--purple-2);
+      transition: transform 0.25s ease;
+    }
+
+    .faq details[open] summary::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .faq p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--card-2);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .icon {
+      min-width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(157,78,221,0.14);
+      border: 1px solid rgba(199,125,255,0.25);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact-notes {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .contact-note {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 26px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted-2);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .grid-3,
+      .about-wrap,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand-text span {
+        white-space: normal;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding-top: 52px;
+      }
+
+      .btn,
+      .nav-cta {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .hero p,
+      .section-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="VTX.png" alt="VTX Logo">
+        </div>
+        <div class="brand-text">
+          <strong>VTX</strong>
+          <span>IT & Technik Service Vaistryx</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#services">Leistungen</a>
+        <a href="#about">Über mich</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="nav-cta">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">
+          <span class="dot"></span>
+          Technischer Service für PC & Laptop
+        </div>
+
+        <h1>
+          <span class="glow">VTX</span><br />
+          IT & Technik<br />
+          Service<br />
+          Vaistryx
+        </h1>
+
+        <p>
+          Hilfe bei PC- und Laptop-Problemen – schnell, verständlich und ohne unnötigen Aufwand.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/4915129036718">
+            Auf WhatsApp schreiben
+          </a>
+          <a class="btn btn-secondary" href="#services">
+            Leistungen ansehen
+          </a>
+        </div>
+
+        <div class="hero-points">
+          <div class="hero-point">Schnelle Rückmeldung</div>
+          <div class="hero-point">Verständlich erklärt</div>
+          <div class="hero-point">Persönlich & unkompliziert</div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="logo-box">
+          <img src="VTX.png" alt="VTX Logo">
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>Diagnose</strong>
+            <span>Probleme klar erkennen</span>
+          </div>
+          <div class="stat">
+            <strong>Reinigung</strong>
+            <span>Staub, Hitze, Lautstärke</span>
+          </div>
+          <div class="stat">
+            <strong>Upgrades</strong>
+            <span>SSD, RAM & Optimierung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Leistungen</h2>
+      <p class="section-text">
+        Klare und sinnvolle Services für typische Technik-Probleme – sauber, verständlich und ohne unnötiges Drumherum.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="badge">Service 01</span>
+          <h3>Reinigung & Wartung</h3>
+          <p>
+            Innenreinigung von Laptop oder PC, Entfernung von Staub und technische Pflege für bessere Kühlung und ruhigeren Lauf.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge">Service 02</span>
+          <h3>Fehlerdiagnose</h3>
+          <p>
+            Ich finde schnell heraus, wo das Problem liegt – zum Beispiel bei Abstürzen, Überhitzung, langsamer Leistung oder Startproblemen.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge">Service 03</span>
+          <h3>Windows Neuinstallation</h3>
+          <p>
+            Sauberes Neuaufsetzen des Systems bei Software-Problemen oder starker Verlangsamung – damit alles wieder rund läuft.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge">Service 04</span>
+          <h3>SSD & RAM Upgrades</h3>
+          <p>
+            Austausch oder Erweiterung passender Hardware, damit das Gerät schneller startet, flüssiger läuft und wieder mehr Reserven hat.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge">Service 05</span>
+          <h3>Allgemeiner Technik-Service</h3>
+          <p>
+            Hilfe bei typischen Problemen rund um Notebook, Desktop, Einrichtung, Systempflege und grundlegende technische Fragen.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge">Service 06</span>
+          <h3>Individuelle Anfrage</h3>
+          <p>
+            Nicht jedes Problem passt in eine feste Kategorie. Einfach kurz schreiben, Anliegen schildern und dann schauen wir gemeinsam weiter.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-wrap">
+        <div class="card">
+          <h2 class="section-title">Über mich</h2>
+          <p class="section-text" style="margin-bottom:0;">
+            Ich beschäftige mich schon lange intensiv mit Technik und habe über die Zeit viel Erfahrung mit Geräten, Fehlern und Lösungen gesammelt.
+            <br><br>
+            Mir ist wichtig, dass alles verständlich, sauber und unkompliziert abläuft. Kein unnötiges Fachchinesisch, kein unnötiger Stress – sondern ehrliche Hilfe und sinnvolle Lösungen, die im Alltag wirklich weiterhelfen.
+          </p>
+          <div class="highlight-line">Persönlicher Service statt anonymer Support</div>
+        </div>
+
+        <div class="about-side">
+          <div class="card">
+            <h3>Wofür VTX steht</h3>
+            <div class="list">
+              <div class="list-item"><strong>Schnelle und klare Kommunikation</strong></div>
+              <div class="list-item">Saubere und strukturierte Arbeitsweise</div>
+              <div class="list-item">Technik verständlich erklären statt unnötig kompliziert machen</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Was mir wichtig ist</h3>
+            <div class="list">
+              <div class="list-item">Ehrliche Einschätzung statt unnötiger Maßnahmen</div>
+              <div class="list-item">Einfacher und entspannter Ablauf</div>
+              <div class="list-item">Geräte wieder sauber, schnell und zuverlässig nutzbar machen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">So läuft’s ab</h2>
+      <p class="section-text">
+        Einfacher Ablauf, damit direkt klar ist, wie es weitergeht.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="badge">Schritt 01</span>
+          <h3>Anfrage senden</h3>
+          <p>
+            Kurz per WhatsApp schreiben und das Problem so einfach wie möglich schildern.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge">Schritt 02</span>
+          <h3>Problem verstehen</h3>
+          <p>
+            Nach kurzer Rücksprache wird geschaut, worum es ungefähr geht und was sinnvoll möglich ist.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge">Schritt 03</span>
+          <h3>Lösung finden</h3>
+          <p>
+            Danach wird entschieden, welche Maßnahme am meisten Sinn macht – von Reinigung bis Upgrade.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-text">
+        Ein paar typische Fragen direkt vorweg.
+      </p>
+
+      <div class="faq">
+        <details open>
+          <summary>Welche Geräte werden angenommen?</summary>
+          <p>
+            Vor allem Laptops und PCs. Bei anderen Technik-Themen kann man trotzdem einfach kurz anfragen.
+          </p>
+        </details>
+
+        <details>
+          <summary>Wie läuft das Ganze ab?</summary>
+          <p>
+            Einfach kurz über WhatsApp schreiben, das Problem schildern und dann wird geschaut, was sinnvoll und machbar ist.
+          </p>
+        </details>
+
+        <details>
+          <summary>Wie schnell bekommt man eine Rückmeldung?</summary>
+          <p>
+            Meist kommt innerhalb kurzer Zeit eine Rückmeldung – oft noch am selben Tag.
+          </p>
+        </details>
+
+        <details>
+          <summary>Kann man auch erstmal nur eine Diagnose machen lassen?</summary>
+          <p>
+            Ja, natürlich. Wenn erstmal nur herausgefunden werden soll, was das Problem ist, geht das auch.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div class="card">
+          <h2 class="section-title">Kontakt</h2>
+          <p class="section-text" style="margin-bottom:0;">
+            Am einfachsten läuft alles direkt und unkompliziert über WhatsApp.
+          </p>
+
+          <div class="hero-actions" style="margin-top:24px;">
+            <a class="btn btn-primary" href="https://wa.me/4915129036718">
+              WhatsApp öffnen
+            </a>
+          </div>
+
+          <div class="contact-notes">
+            <div class="contact-note">Schnelle Rückmeldung bei Anfragen</div>
+            <div class="contact-note">Einfach Problem kurz beschreiben</div>
+            <div class="contact-note">Unkomplizierter und direkter Ablauf</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Kontaktmöglichkeiten</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="icon">WA</div>
+              <div>
+                <strong>WhatsApp</strong><br />
+                <span style="color:var(--muted);">Direkte Anfrage für Probleme, Fragen oder Rücksprache</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">#</div>
+              <div>
+                <strong>Telefonnummer</strong><br />
+                <span style="color:var(--muted);">015129036718</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">VTX</div>
+              <div>
+                <strong>IT & Technik Service Vaistryx</strong><br />
+                <span style="color:var(--muted);">Kurzname / Brand: VTX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 IT & Technik Service Vaistryx</div>
+    </div>
+  </footer>
+</body>
+</html>
