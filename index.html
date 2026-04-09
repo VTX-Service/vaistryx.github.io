@@ -6,25 +6,32 @@
   <title>VTX Wüllner | IT & Technik Service</title>
   <meta
     name="description"
-    content="VTX Wüllner – IT & Technik Service für PC- und Laptop-Probleme, Reinigung, Diagnose, Upgrades und aufbereitete Geräte."
+    content="VTX Wüllner – Premium IT & Technik Service für PCs, Laptops, Diagnose, Reinigung, Upgrades und aufbereitete Geräte."
   />
   <style>
     :root {
-      --bg: #050505;
-      --bg-soft: #0d0d12;
-      --card: rgba(255,255,255,0.04);
-      --card-soft: rgba(255,255,255,0.025);
-      --text: #f5f5f7;
-      --muted: #b8b8c2;
-      --muted-2: #9797a3;
+      --bg: #060608;
+      --bg-2: #0c0c12;
+      --panel: rgba(255,255,255,0.05);
+      --panel-2: rgba(255,255,255,0.035);
+      --panel-3: rgba(255,255,255,0.025);
       --line: rgba(255,255,255,0.08);
+      --line-2: rgba(199,125,255,0.18);
+      --text: #f5f5f8;
+      --muted: #a9a9b5;
+      --muted-2: #8f8f9d;
       --purple: #9d4edd;
       --purple-2: #c77dff;
       --purple-3: #7b2cbf;
-      --glow: 0 0 18px rgba(157, 78, 221, 0.4), 0 0 40px rgba(157, 78, 221, 0.16);
-      --radius: 24px;
-      --max: 1180px;
-      --shadow: 0 20px 60px rgba(0,0,0,0.32);
+      --purple-4: #e6ccff;
+      --green: #c9ffdf;
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --shadow: 0 24px 90px rgba(0,0,0,0.38);
+      --shadow-soft: 0 18px 50px rgba(0,0,0,0.24);
+      --glow: 0 0 30px rgba(157,78,221,0.22);
+      --max: 1220px;
     }
 
     * {
@@ -38,23 +45,23 @@
     body {
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 15% 10%, rgba(157,78,221,0.16), transparent 24%),
-        radial-gradient(circle at 85% 0%, rgba(199,125,255,0.09), transparent 20%),
-        radial-gradient(circle at 50% 100%, rgba(123,44,191,0.10), transparent 30%),
-        var(--bg);
       color: var(--text);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(157,78,221,0.18), transparent 22%),
+        radial-gradient(circle at 92% 8%, rgba(199,125,255,0.10), transparent 18%),
+        radial-gradient(circle at 50% 100%, rgba(123,44,191,0.12), transparent 24%),
+        linear-gradient(180deg, #060608 0%, #09090c 45%, #060608 100%);
       line-height: 1.6;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -62,55 +69,21 @@
       margin: 0 auto;
     }
 
-    .topbar {
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(6, 6, 8, 0.70);
       border-bottom: 1px solid var(--line);
-      background: rgba(255,255,255,0.02);
-    }
-
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 10px 0;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .topbar-left,
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .quick-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
     }
 
     .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(5, 5, 5, 0.72);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-inner {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 14px 0;
     }
 
     .brand {
@@ -120,20 +93,18 @@
       min-width: 0;
     }
 
-    .brand-mark {
+    .brand-icon {
       width: 48px;
       height: 48px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(157,78,221,0.24), rgba(199,125,255,0.08));
-      border: 1px solid rgba(199,125,255,0.35);
-      box-shadow: var(--glow);
+      border-radius: 15px;
       overflow: hidden;
       flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(157,78,221,0.22), rgba(199,125,255,0.08));
+      border: 1px solid rgba(199,125,255,0.30);
+      box-shadow: var(--glow);
     }
 
-    .brand-mark img {
+    .brand-icon img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -153,8 +124,8 @@
 
     .nav-links {
       display: flex;
-      gap: 18px;
       align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
@@ -168,47 +139,82 @@
       color: white;
     }
 
-    .nav-cta {
+    .nav-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 16px;
+      min-height: 46px;
+      padding: 0 16px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--purple-3), var(--purple));
-      border: 1px solid rgba(199,125,255,0.28);
+      color: white !important;
+      border: 1px solid rgba(199,125,255,0.26);
       box-shadow: var(--glow);
       font-weight: 700;
-      font-size: 14px;
-      color: white !important;
     }
 
     .hero {
-      padding: 82px 0 54px;
+      padding: 34px 0 26px;
+    }
+
+    .hero-shell {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .hero-left,
+    .hero-right {
       position: relative;
       overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 28px;
-      align-items: center;
+    .hero-left {
+      padding: 38px;
+      isolation: isolate;
     }
 
-    .eyebrow {
+    .hero-left::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(157,78,221,0.18), transparent 68%);
+      z-index: -1;
+    }
+
+    .hero-left::after {
+      content: "";
+      position: absolute;
+      left: -100px;
+      bottom: -140px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(199,125,255,0.10), transparent 68%);
+      z-index: -1;
+    }
+
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
-      border: 1px solid rgba(199,125,255,0.22);
-      background: rgba(255,255,255,0.03);
       border-radius: 999px;
-      color: #ddd;
+      border: 1px solid rgba(199,125,255,0.18);
+      background: rgba(255,255,255,0.03);
+      color: #dfdfeb;
       font-size: 13px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
-    .dot {
+    .hero-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
@@ -218,19 +224,19 @@
 
     h1 {
       margin: 0 0 18px;
-      font-size: clamp(42px, 7vw, 84px);
-      line-height: 0.94;
-      letter-spacing: -2px;
+      font-size: clamp(44px, 7vw, 90px);
+      line-height: 0.9;
+      letter-spacing: -2.8px;
     }
 
-    .hero h1 .glow {
+    h1 .glow {
       color: white;
-      text-shadow: 0 0 18px rgba(199,125,255,0.45), 0 0 45px rgba(157,78,221,0.18);
+      text-shadow: 0 0 24px rgba(199,125,255,0.40);
     }
 
-    .hero p {
-      margin: 0;
+    .hero-text {
       max-width: 680px;
+      margin: 0;
       font-size: 18px;
       color: var(--muted);
     }
@@ -246,129 +252,149 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: 0.25s ease;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 15px;
       border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.22s ease;
       cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn-primary {
       background: linear-gradient(90deg, var(--purple-3), var(--purple));
-      box-shadow: var(--glow);
       color: white;
-    }
-
-    .btn-primary:hover,
-    .btn-secondary:hover {
-      transform: translateY(-2px);
+      box-shadow: var(--glow);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.03);
-      border-color: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.035);
       color: var(--text);
+      border-color: rgba(255,255,255,0.08);
     }
 
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+    .hero-trust {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 26px;
     }
 
-    .hero-point {
-      padding: 9px 12px;
-      border-radius: 999px;
+    .hero-trust-card {
+      padding: 14px;
+      border-radius: 16px;
       background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+
+    .hero-trust-card strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .hero-trust-card span {
       color: var(--muted);
       font-size: 13px;
     }
 
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow: 0 25px 80px rgba(0,0,0,0.42);
+    .hero-right {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .logo-box {
-      min-height: 220px;
+    .logo-stage {
+      min-height: 230px;
       border-radius: 22px;
+      border: 1px solid rgba(199,125,255,0.16);
       background:
-        radial-gradient(circle at 50% 30%, rgba(199,125,255,0.16), transparent 42%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border: 1px solid rgba(199,125,255,0.14);
+        radial-gradient(circle at 50% 30%, rgba(199,125,255,0.18), transparent 42%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 18px;
-      overflow: hidden;
+      padding: 22px;
     }
 
-    .logo-box img {
-      width: 240px;
-      height: auto;
-      border-radius: 16px;
-      opacity: 0.95;
+    .logo-stage img {
+      width: 250px;
+      border-radius: 18px;
+      opacity: 0.96;
+      filter: drop-shadow(0 0 20px rgba(199,125,255,0.12));
     }
 
-    .contact-highlight {
+    .quick-contact {
       display: grid;
       gap: 12px;
-      margin-top: 16px;
     }
 
-    .contact-highlight-item {
+    .quick-contact-item {
       display: flex;
       gap: 12px;
       align-items: flex-start;
-      padding: 14px 16px;
-      border-radius: 16px;
+      padding: 15px;
+      border-radius: 18px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
     }
 
-    .mini-icon {
-      min-width: 34px;
-      height: 34px;
+    .quick-icon {
+      width: 38px;
+      height: 38px;
       border-radius: 12px;
       display: grid;
       place-items: center;
-      background: rgba(157,78,221,0.14);
-      border: 1px solid rgba(199,125,255,0.25);
+      flex-shrink: 0;
       font-size: 13px;
       font-weight: 700;
+      color: white;
+      background: rgba(157,78,221,0.14);
+      border: 1px solid rgba(199,125,255,0.22);
     }
 
-    .contact-highlight-item strong {
+    .quick-contact-item strong {
       display: block;
       margin-bottom: 2px;
       font-size: 14px;
     }
 
-    .contact-highlight-item span {
+    .quick-contact-item span,
+    .quick-contact-item a {
       color: var(--muted);
       font-size: 14px;
+      word-break: break-word;
     }
 
     section {
-      padding: 34px 0 82px;
+      padding: 24px 0 86px;
     }
 
-    .section-title {
-      font-size: 34px;
-      margin: 0 0 10px;
-      letter-spacing: -0.8px;
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
     }
 
-    .section-text {
-      margin: 0 0 30px;
+    .section-head h2 {
+      margin: 0;
+      font-size: 36px;
+      letter-spacing: -0.9px;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 720px;
       color: var(--muted);
-      max-width: 760px;
       font-size: 17px;
     }
 
@@ -378,25 +404,42 @@
       gap: 18px;
     }
 
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
     .card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
       padding: 24px;
-      transition: 0.25s ease;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.028));
+      border: 1px solid var(--line);
+      transition: 0.22s ease;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(199,125,255,0.22);
-      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+      border-color: rgba(199,125,255,0.18);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #f1e7ff;
+      background: rgba(157,78,221,0.12);
+      border: 1px solid rgba(199,125,255,0.18);
     }
 
     .card h3 {
       margin: 0 0 10px;
-      font-size: 19px;
-      line-height: 1.25;
+      font-size: 20px;
+      line-height: 1.24;
     }
 
     .card p {
@@ -405,54 +448,66 @@
       font-size: 15px;
     }
 
-    .badge {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 10px;
-      font-size: 12px;
-      border-radius: 999px;
-      color: #eee;
-      background: rgba(157,78,221,0.12);
-      border: 1px solid rgba(199,125,255,0.2);
+    .service-tag {
+      margin-top: 15px;
+      color: var(--purple-4);
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    .about-wrap {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 20px;
-      align-items: stretch;
+    .feature-panel {
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
     }
 
-    .about-side {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .feature-panel h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      letter-spacing: -0.5px;
     }
 
-    .list {
+    .feature-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .feature-list {
       display: grid;
       gap: 12px;
-      margin-top: 14px;
+      margin-top: 20px;
     }
 
-    .list-item {
+    .feature-list-item {
       padding: 14px 16px;
       border-radius: 16px;
-      background: var(--card-soft);
+      background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
       color: var(--muted);
     }
 
-    .highlight-line {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 14px;
-      border-radius: 14px;
-      background: rgba(157,78,221,0.10);
-      border: 1px solid rgba(199,125,255,0.18);
-      color: #efdefd;
-      font-size: 14px;
-      font-weight: 600;
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: rgba(157,78,221,0.14);
+      border: 1px solid rgba(199,125,255,0.22);
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
     }
 
     .faq {
@@ -461,24 +516,18 @@
     }
 
     .faq details {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      padding: 18px 20px;
       border-radius: 18px;
-      padding: 16px 18px;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .faq details:hover {
-      border-color: rgba(199,125,255,0.26);
-      transform: translateY(-1px);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
     }
 
     .faq summary {
-      cursor: pointer;
-      font-weight: 700;
       list-style: none;
+      cursor: pointer;
       position: relative;
-      padding-right: 30px;
+      padding-right: 28px;
+      font-weight: 700;
     }
 
     .faq summary::-webkit-details-marker {
@@ -488,12 +537,11 @@
     .faq summary::after {
       content: "⌄";
       position: absolute;
-      right: 2px;
+      right: 0;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 20px;
       color: var(--purple-2);
-      transition: transform 0.25s ease;
+      font-size: 20px;
     }
 
     .faq details[open] summary::after {
@@ -501,61 +549,63 @@
     }
 
     .faq p {
-      color: var(--muted);
       margin: 12px 0 0;
+      color: var(--muted);
     }
 
-    .contact-box {
+    .contact-section {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 18px;
     }
 
-    .contact-info {
+    .contact-main,
+    .contact-side {
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-main h2,
+    .contact-side h3 {
+      margin: 0 0 10px;
+    }
+
+    .contact-main p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-side-list {
       display: grid;
       gap: 12px;
       margin-top: 18px;
     }
 
-    .contact-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
+    .contact-side-item {
       padding: 14px 16px;
       border-radius: 16px;
-      background: var(--card-soft);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .icon {
-      min-width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: rgba(157,78,221,0.14);
-      border: 1px solid rgba(199,125,255,0.25);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .contact-notes {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .contact-note {
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.025);
+      background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
       color: var(--muted);
-      font-size: 14px;
+    }
+
+    .contact-side-item strong {
+      color: var(--text);
     }
 
     footer {
-      padding: 26px 0 34px;
+      padding: 28px 0 38px;
       border-top: 1px solid var(--line);
       color: var(--muted-2);
       font-size: 14px;
@@ -564,49 +614,54 @@
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     @media (max-width: 980px) {
-      .hero-grid,
+      .hero-shell,
       .grid-3,
-      .about-wrap,
-      .contact-box {
+      .grid-2,
+      .steps,
+      .contact-section {
         grid-template-columns: 1fr;
       }
 
-      .nav-inner,
-      .topbar-inner {
-        flex-direction: column;
+      .nav {
+        padding: 14px 0 18px;
         align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-trust {
+        grid-template-columns: 1fr;
       }
 
       h1 {
-        letter-spacing: -1px;
+        letter-spacing: -1.8px;
       }
     }
 
     @media (max-width: 620px) {
-      .hero {
-        padding-top: 56px;
-      }
-
       .btn,
-      .nav-cta {
+      .nav-btn {
         width: 100%;
       }
 
-      .hero-actions {
-        flex-direction: column;
+      .hero-left,
+      .hero-right,
+      .feature-panel,
+      .contact-main,
+      .contact-side {
+        padding: 20px;
       }
 
-      .section-title {
-        font-size: 28px;
+      .section-head h2 {
+        font-size: 29px;
       }
 
-      .hero p,
-      .section-text {
+      .hero-text,
+      .section-head p {
         font-size: 16px;
       }
 
@@ -617,22 +672,10 @@
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-left">
-        <div class="quick-pill">WhatsApp: 015129036718</div>
-        <div class="quick-pill">E-Mail: kontakt@vtx-service.de</div>
-      </div>
-      <div class="topbar-right">
-        <div class="quick-pill">Schnelle Rückmeldung</div>
-      </div>
-    </div>
-  </div>
-
-  <nav class="nav">
-    <div class="container nav-inner">
+  <div class="nav-wrap">
+    <div class="container nav">
       <div class="brand">
-        <div class="brand-mark">
+        <div class="brand-icon">
           <img src="VTX.png" alt="VTX Logo">
         </div>
         <div class="brand-text">
@@ -646,133 +689,132 @@
         <a href="#offers">Angebote</a>
         <a href="#about">Über mich</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-cta">Jetzt Kontakt</a>
+        <a href="#contact" class="nav-btn">Kontakt</a>
       </div>
     </div>
-  </nav>
+  </div>
 
   <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">
-          <span class="dot"></span>
-          PC, Laptop & Technik Hilfe
+    <div class="container hero-shell">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="hero-dot"></span>
+          Premium PC & Laptop Service
         </div>
 
         <h1>
-          <span class="glow">VTX</span><br />
-          IT & Technik<br />
-          Wüllner
+          <span class="glow">VTX</span><br>
+          Technik, die<br>
+          wieder läuft.
         </h1>
 
-        <p>
-          Hilfe bei PC- und Laptop-Problemen – sauber, verständlich und ohne unnötigen Aufwand.
+        <p class="hero-text">
+          Direkte Hilfe bei PC- und Laptop-Problemen – modern, verständlich und sauber umgesetzt. Ohne unnötigen Stress und ohne unnötiges Fachchinesisch.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/4915129036718" target="_blank">
-            Auf WhatsApp schreiben
-          </a>
-          <a class="btn btn-secondary" href="#contact">
-            Kontakt ansehen
-          </a>
+          <a class="btn btn-primary" href="https://wa.me/4915129036718" target="_blank">WhatsApp schreiben</a>
+          <a class="btn btn-secondary" href="mailto:kontakt@vtx-service.de">E-Mail senden</a>
         </div>
 
-        <div class="hero-points">
-          <div class="hero-point">Persönlich</div>
-          <div class="hero-point">Unkompliziert</div>
-          <div class="hero-point">Verständlich erklärt</div>
+        <div class="hero-trust">
+          <div class="hero-trust-card">
+            <strong>Schnelle Hilfe</strong>
+            <span>Direkter Kontakt ohne unnötige Umwege</span>
+          </div>
+          <div class="hero-trust-card">
+            <strong>Saubere Lösungen</strong>
+            <span>Von Diagnose bis Upgrade sinnvoll umgesetzt</span>
+          </div>
+          <div class="hero-trust-card">
+            <strong>Verständlich erklärt</strong>
+            <span>Keine unnötig komplizierten Antworten</span>
+          </div>
         </div>
       </div>
 
-      <div class="hero-card">
-        <div class="logo-box">
+      <aside class="hero-right">
+        <div class="logo-stage">
           <img src="VTX.png" alt="VTX Logo">
         </div>
 
-        <div class="contact-highlight">
-          <div class="contact-highlight-item">
-            <div class="mini-icon">WA</div>
+        <div class="quick-contact">
+          <div class="quick-contact-item">
+            <div class="quick-icon">WA</div>
             <div>
               <strong>WhatsApp</strong>
-              <span>015129036718</span>
+              <a href="https://wa.me/4915129036718" target="_blank">015129036718</a>
             </div>
           </div>
 
-          <div class="contact-highlight-item">
-            <div class="mini-icon">@</div>
+          <div class="quick-contact-item">
+            <div class="quick-icon">@</div>
             <div>
               <strong>E-Mail</strong>
-              <span>kontakt@vtx-service.de</span>
+              <a href="mailto:kontakt@vtx-service.de">kontakt@vtx-service.de</a>
             </div>
           </div>
 
-          <div class="contact-highlight-item">
-            <div class="mini-icon">VTX</div>
+          <div class="quick-contact-item">
+            <div class="quick-icon">OK</div>
             <div>
-              <strong>Direkter Kontakt</strong>
-              <span>Einfach schreiben und Problem kurz schildern</span>
+              <strong>Einfacher Ablauf</strong>
+              <span>Problem kurz schildern und direkt Rückmeldung bekommen.</span>
             </div>
           </div>
         </div>
-      </div>
+      </aside>
     </div>
   </header>
 
   <section id="services">
     <div class="container">
-      <h2 class="section-title">Leistungen</h2>
-      <p class="section-text">
-        Klare und sinnvolle Hilfe bei typischen Technik-Problemen – ohne unnötiges Gelaber und ohne Fachchinesisch.
-      </p>
+      <div class="section-head">
+        <h2>Leistungen</h2>
+        <p>Klare Hilfe für typische Technik-Probleme – hochwertig aufbereitet und auf einen Blick verständlich.</p>
+      </div>
 
       <div class="grid-3">
         <div class="card">
-          <span class="badge">Service 01</span>
+          <span class="card-label">01</span>
           <h3>Reinigung & Wartung</h3>
-          <p>
-            Innenreinigung von Laptop oder PC, Entfernung von Staub und technische Pflege für bessere Kühlung und ruhigeren Lauf.
-          </p>
+          <p>Innenreinigung von Laptop oder PC, Entfernung von Staub und Pflege für bessere Kühlung und ruhigeren Lauf.</p>
+          <div class="service-tag">Weniger Hitze, weniger Lärm, bessere Leistung</div>
         </div>
 
         <div class="card">
-          <span class="badge">Service 02</span>
+          <span class="card-label">02</span>
           <h3>Fehlerdiagnose</h3>
-          <p>
-            Ich finde schnell heraus, wo das Problem liegt – zum Beispiel bei Abstürzen, Überhitzung, langsamer Leistung oder Startproblemen.
-          </p>
+          <p>Ich finde heraus, wo das Problem liegt – zum Beispiel bei Abstürzen, Startproblemen, Überhitzung oder langsamer Leistung.</p>
+          <div class="service-tag">Klar erklärt statt Rätselraten</div>
         </div>
 
         <div class="card">
-          <span class="badge">Service 03</span>
+          <span class="card-label">03</span>
           <h3>Windows Neuinstallation</h3>
-          <p>
-            Sauberes Neuaufsetzen des Systems bei Software-Problemen oder wenn das Gerät wieder stabil und flüssig laufen soll.
-          </p>
+          <p>Sauberes Neuaufsetzen des Systems, wenn das Gerät wieder stabil, flüssig und ordentlich laufen soll.</p>
+          <div class="service-tag">Frisch aufgesetzt und wieder sauber nutzbar</div>
         </div>
 
         <div class="card">
-          <span class="badge">Service 04</span>
+          <span class="card-label">04</span>
           <h3>SSD & RAM Upgrades</h3>
-          <p>
-            Passende Hardware-Upgrades, damit das Gerät schneller startet, flüssiger läuft und wieder mehr Reserven hat.
-          </p>
+          <p>Passende Hardware-Upgrades für schnellere Startzeiten, flüssigeres Arbeiten und mehr Reserven im Alltag.</p>
+          <div class="service-tag">Mehr Speed ohne direkt neues Gerät</div>
         </div>
 
         <div class="card">
-          <span class="badge">Service 05</span>
+          <span class="card-label">05</span>
           <h3>Allgemeiner Technik-Service</h3>
-          <p>
-            Hilfe bei typischen Problemen rund um Notebook, Desktop, Einrichtung, Systempflege und grundlegende technische Fragen.
-          </p>
+          <p>Hilfe bei typischen Problemen rund um Notebook, Desktop, Einrichtung, Systempflege und grundlegende Technikfragen.</p>
+          <div class="service-tag">Direkte Hilfe auch bei kleineren Problemen</div>
         </div>
 
         <div class="card">
-          <span class="badge">Service 06</span>
+          <span class="card-label">06</span>
           <h3>Individuelle Anfrage</h3>
-          <p>
-            Nicht jedes Problem passt in eine feste Kategorie. Einfach kurz schreiben, Anliegen schildern und dann schauen wir gemeinsam weiter.
-          </p>
+          <p>Nicht jedes Problem passt in eine feste Kategorie. Einfach kurz schreiben und gemeinsam schauen, was sinnvoll ist.</p>
+          <div class="service-tag">Unkompliziert anfragen statt lange suchen</div>
         </div>
       </div>
     </div>
@@ -780,34 +822,27 @@
 
   <section id="offers">
     <div class="container">
-      <h2 class="section-title">Geräte & Angebote</h2>
-      <p class="section-text">
-        Neben Reparaturen biete ich auch aufbereitete und fertige PCs an. Aktuelle Angebote findest du direkt auf meinem Kleinanzeigen-Profil.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Aufbereitete Geräte</h3>
+      <div class="grid-2">
+        <div class="feature-panel">
+          <h3>Geräte & Angebote</h3>
           <p>
-            PCs und Technik werden vor dem Verkauf geprüft, sauber vorbereitet und ehrlich beschrieben.
+            Neben Reparaturen biete ich auch aufbereitete und fertige PCs an. Aktuelle Angebote findest du direkt auf meinem Kleinanzeigen-Profil.
           </p>
+
+          <div class="contact-buttons">
+            <a class="btn btn-primary" href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=122138584" target="_blank">
+              Kleinanzeigen öffnen
+            </a>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Was dich erwartet</h3>
-          <p>
-            Getestete Geräte, faire Preise und klare Angaben statt unnötigem Gelaber.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Direkt ansehen</h3>
-          <p style="margin-bottom:16px;">
-            Alle aktuellen Angebote findest du hier:
-          </p>
-          <a class="btn btn-primary" href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=122138584" target="_blank">
-            Kleinanzeigen öffnen
-          </a>
+        <div class="feature-panel">
+          <h3>Was dich dort erwartet</h3>
+          <div class="feature-list">
+            <div class="feature-list-item">Geprüfte und sauber vorbereitete Geräte</div>
+            <div class="feature-list-item">Ehrliche Beschreibung statt übertriebenem Verkaufstext</div>
+            <div class="feature-list-item">Faire Preise und direkter Kontakt bei Fragen</div>
+          </div>
         </div>
       </div>
     </div>
@@ -815,34 +850,23 @@
 
   <section id="about">
     <div class="container">
-      <div class="about-wrap">
-        <div class="card">
-          <h2 class="section-title">Über mich</h2>
-          <p class="section-text" style="margin-bottom:0;">
+      <div class="grid-2">
+        <div class="feature-panel">
+          <h3>Über mich</h3>
+          <p>
             Ich beschäftige mich schon lange intensiv mit Technik und habe über die Zeit viel Erfahrung mit Geräten, Fehlern und Lösungen gesammelt.
             <br><br>
             Mir ist wichtig, dass alles verständlich, sauber und unkompliziert abläuft. Kein unnötiges Fachchinesisch, kein unnötiger Stress – sondern ehrliche Hilfe und sinnvolle Lösungen, die im Alltag wirklich weiterhelfen.
           </p>
-          <div class="highlight-line">Persönlicher Service statt anonymer Support</div>
         </div>
 
-        <div class="about-side">
-          <div class="card">
-            <h3>Wofür VTX steht</h3>
-            <div class="list">
-              <div class="list-item"><strong>Schnelle und klare Kommunikation</strong></div>
-              <div class="list-item">Saubere und strukturierte Arbeitsweise</div>
-              <div class="list-item">Technik verständlich erklären statt unnötig kompliziert machen</div>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Was mir wichtig ist</h3>
-            <div class="list">
-              <div class="list-item">Ehrliche Einschätzung statt unnötiger Maßnahmen</div>
-              <div class="list-item">Einfacher und entspannter Ablauf</div>
-              <div class="list-item">Geräte wieder sauber, schnell und zuverlässig nutzbar machen</div>
-            </div>
+        <div class="feature-panel">
+          <h3>Wofür VTX steht</h3>
+          <div class="feature-list">
+            <div class="feature-list-item">Schnelle und klare Kommunikation</div>
+            <div class="feature-list-item">Saubere und strukturierte Arbeitsweise</div>
+            <div class="feature-list-item">Technik verständlich erklären statt unnötig kompliziert machen</div>
+            <div class="feature-list-item">Ehrliche Einschätzung statt unnötiger Maßnahmen</div>
           </div>
         </div>
       </div>
@@ -851,34 +875,28 @@
 
   <section>
     <div class="container">
-      <h2 class="section-title">So läuft’s ab</h2>
-      <p class="section-text">
-        Einfacher Ablauf, damit direkt klar ist, wie es weitergeht.
-      </p>
+      <div class="section-head">
+        <h2>So läuft’s ab</h2>
+        <p>Einfacher Ablauf, damit direkt klar ist, wie es weitergeht.</p>
+      </div>
 
-      <div class="grid-3">
+      <div class="steps">
         <div class="card">
-          <span class="badge">Schritt 01</span>
+          <div class="step-number">01</div>
           <h3>Anfrage senden</h3>
-          <p>
-            Kurz per WhatsApp oder E-Mail schreiben und das Problem so einfach wie möglich schildern.
-          </p>
+          <p>Kurz per WhatsApp oder E-Mail schreiben und das Problem so einfach wie möglich schildern.</p>
         </div>
 
         <div class="card">
-          <span class="badge">Schritt 02</span>
-          <h3>Problem verstehen</h3>
-          <p>
-            Nach kurzer Rücksprache wird geschaut, worum es ungefähr geht und was sinnvoll möglich ist.
-          </p>
+          <div class="step-number">02</div>
+          <h3>Problem einordnen</h3>
+          <p>Nach kurzer Rücksprache wird geschaut, worum es ungefähr geht und was sinnvoll möglich ist.</p>
         </div>
 
         <div class="card">
-          <span class="badge">Schritt 03</span>
-          <h3>Lösung finden</h3>
-          <p>
-            Danach wird entschieden, welche Maßnahme am meisten Sinn macht – von Reinigung bis Upgrade.
-          </p>
+          <div class="step-number">03</div>
+          <h3>Lösung umsetzen</h3>
+          <p>Danach wird entschieden, welche Maßnahme am meisten Sinn macht – von Reinigung bis Upgrade.</p>
         </div>
       </div>
     </div>
@@ -886,38 +904,30 @@
 
   <section id="faq">
     <div class="container">
-      <h2 class="section-title">FAQ</h2>
-      <p class="section-text">
-        Ein paar typische Fragen direkt vorweg.
-      </p>
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p>Ein paar typische Fragen direkt vorweg.</p>
+      </div>
 
       <div class="faq">
         <details open>
           <summary>Welche Geräte werden angenommen?</summary>
-          <p>
-            Vor allem Laptops und PCs. Bei anderen Technik-Themen kann man trotzdem einfach kurz anfragen.
-          </p>
+          <p>Vor allem Laptops und PCs. Bei anderen Technik-Themen kann man trotzdem einfach kurz anfragen.</p>
         </details>
 
         <details>
           <summary>Wie läuft das Ganze ab?</summary>
-          <p>
-            Einfach kurz über WhatsApp oder per E-Mail schreiben, das Problem schildern und dann wird geschaut, was sinnvoll und machbar ist.
-          </p>
+          <p>Einfach kurz über WhatsApp oder per E-Mail schreiben, das Problem schildern und dann wird geschaut, was sinnvoll und machbar ist.</p>
         </details>
 
         <details>
           <summary>Wie schnell bekommt man eine Rückmeldung?</summary>
-          <p>
-            Meist kommt innerhalb kurzer Zeit eine Rückmeldung – oft noch am selben Tag.
-          </p>
+          <p>Meist kommt innerhalb kurzer Zeit eine Rückmeldung – oft noch am selben Tag.</p>
         </details>
 
         <details>
           <summary>Kann man auch erstmal nur eine Diagnose machen lassen?</summary>
-          <p>
-            Ja, natürlich. Wenn erstmal nur herausgefunden werden soll, was das Problem ist, geht das auch.
-          </p>
+          <p>Ja, natürlich. Wenn erstmal nur herausgefunden werden soll, was das Problem ist, geht das auch.</p>
         </details>
       </div>
     </div>
@@ -925,62 +935,36 @@
 
   <section id="contact">
     <div class="container">
-      <div class="contact-box">
-        <div class="card">
-          <h2 class="section-title">Kontakt</h2>
-          <p class="section-text" style="margin-bottom:0;">
-            Am einfachsten läuft alles direkt und unkompliziert über WhatsApp oder per E-Mail.
+      <div class="contact-section">
+        <div class="contact-main">
+          <h2>Kontakt</h2>
+          <p>
+            Am einfachsten läuft alles direkt und unkompliziert über WhatsApp oder per E-Mail. Kurz schreiben, Problem schildern und direkt Rückmeldung bekommen.
           </p>
 
-          <div class="hero-actions" style="margin-top:24px;">
-            <a class="btn btn-primary" href="https://wa.me/4915129036718" target="_blank">
-              WhatsApp öffnen
-            </a>
-            <a class="btn btn-secondary" href="mailto:kontakt@vtx-service.de">
-              E-Mail schreiben
-            </a>
-          </div>
-
-          <div class="contact-notes">
-            <div class="contact-note">Schnelle Rückmeldung bei Anfragen</div>
-            <div class="contact-note">Einfach Problem kurz beschreiben</div>
-            <div class="contact-note">Unkomplizierter und direkter Ablauf</div>
+          <div class="contact-buttons">
+            <a class="btn btn-primary" href="https://wa.me/4915129036718" target="_blank">WhatsApp öffnen</a>
+            <a class="btn btn-secondary" href="mailto:kontakt@vtx-service.de">E-Mail schreiben</a>
           </div>
         </div>
 
-        <div class="card">
-          <h3>Kontaktmöglichkeiten</h3>
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="icon">WA</div>
-              <div>
-                <strong>WhatsApp</strong><br />
-                <span style="color:var(--muted);">015129036718</span>
-              </div>
+        <div class="contact-side">
+          <h3>Direkt erreichbar</h3>
+
+          <div class="contact-side-list">
+            <div class="contact-side-item">
+              <strong>WhatsApp</strong><br>
+              015129036718
             </div>
 
-            <div class="contact-item">
-              <div class="icon">@</div>
-              <div>
-                <strong>E-Mail</strong><br />
-                <span style="color:var(--muted);">kontakt@vtx-service.de</span>
-              </div>
+            <div class="contact-side-item">
+              <strong>E-Mail</strong><br>
+              kontakt@vtx-service.de
             </div>
 
-            <div class="contact-item">
-              <div class="icon">#</div>
-              <div>
-                <strong>Telefonnummer</strong><br />
-                <span style="color:var(--muted);">015129036718</span>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="icon">VTX</div>
-              <div>
-                <strong>VTX Wüllner</strong><br />
-                <span style="color:var(--muted);">IT & Technik Service</span>
-              </div>
+            <div class="contact-side-item">
+              <strong>Brand</strong><br>
+              VTX Wüllner – IT & Technik Service
             </div>
           </div>
         </div>
