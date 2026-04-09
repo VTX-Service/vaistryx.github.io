@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VTX Service | IT & Technik Service</title>
+  <title>VTX Wüllner | IT & Technik Service</title>
   <meta
     name="description"
-    content="VTX Service – Hilfe bei PC- und Laptop-Problemen, Reinigung, Diagnose, Neuinstallation, Upgrades und aufbereiteten Geräten."
+    content="VTX Wüllner – IT & Technik Service für PC- und Laptop-Probleme, Reinigung, Diagnose, Upgrades und aufbereitete Geräte."
   />
   <style>
     :root {
       --bg: #050505;
       --bg-soft: #0d0d12;
       --card: rgba(255,255,255,0.04);
-      --card-2: rgba(255,255,255,0.025);
+      --card-soft: rgba(255,255,255,0.025);
       --text: #f5f5f7;
       --muted: #b8b8c2;
-      --muted-2: #9696a3;
+      --muted-2: #9797a3;
       --line: rgba(255,255,255,0.08);
       --purple: #9d4edd;
       --purple-2: #c77dff;
       --purple-3: #7b2cbf;
-      --glow: 0 0 18px rgba(157, 78, 221, 0.42), 0 0 38px rgba(157, 78, 221, 0.16);
-      --radius: 22px;
+      --glow: 0 0 18px rgba(157, 78, 221, 0.4), 0 0 40px rgba(157, 78, 221, 0.16);
+      --radius: 24px;
       --max: 1180px;
-      --shadow: 0 18px 50px rgba(0,0,0,0.28);
+      --shadow: 0 20px 60px rgba(0,0,0,0.32);
     }
 
     * {
@@ -40,8 +40,8 @@
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
         radial-gradient(circle at 15% 10%, rgba(157,78,221,0.16), transparent 24%),
-        radial-gradient(circle at 85% 0%, rgba(199,125,255,0.09), transparent 18%),
-        radial-gradient(circle at 50% 100%, rgba(123,44,191,0.10), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(199,125,255,0.09), transparent 20%),
+        radial-gradient(circle at 50% 100%, rgba(123,44,191,0.10), transparent 30%),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -52,9 +52,48 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .topbar-left,
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .quick-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
     .nav {
@@ -70,7 +109,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       padding: 14px 0;
     }
 
@@ -82,8 +121,8 @@
     }
 
     .brand-mark {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       border-radius: 14px;
       display: grid;
       place-items: center;
@@ -98,7 +137,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .brand-text strong {
@@ -111,14 +149,13 @@
       display: block;
       font-size: 12px;
       color: var(--muted);
-      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       gap: 18px;
-      flex-wrap: wrap;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -132,10 +169,13 @@
     }
 
     .nav-cta {
-      padding: 10px 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--purple-3), var(--purple));
-      border: 1px solid rgba(199,125,255,0.3);
+      border: 1px solid rgba(199,125,255,0.28);
       box-shadow: var(--glow);
       font-weight: 700;
       font-size: 14px;
@@ -143,15 +183,15 @@
     }
 
     .hero {
-      padding: 88px 0 68px;
+      padding: 82px 0 54px;
       position: relative;
       overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 32px;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 28px;
       align-items: center;
     }
 
@@ -179,18 +219,18 @@
     h1 {
       margin: 0 0 18px;
       font-size: clamp(42px, 7vw, 84px);
-      line-height: 0.96;
+      line-height: 0.94;
       letter-spacing: -2px;
     }
 
     .hero h1 .glow {
       color: white;
-      text-shadow: 0 0 18px rgba(199,125,255,0.42), 0 0 45px rgba(157,78,221,0.16);
+      text-shadow: 0 0 18px rgba(199,125,255,0.45), 0 0 45px rgba(157,78,221,0.18);
     }
 
     .hero p {
       margin: 0;
-      max-width: 700px;
+      max-width: 680px;
       font-size: 18px;
       color: var(--muted);
     }
@@ -199,7 +239,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
     .btn {
@@ -220,7 +260,8 @@
       color: white;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover,
+    .btn-secondary:hover {
       transform: translateY(-2px);
     }
 
@@ -230,16 +271,11 @@
       color: var(--text);
     }
 
-    .btn-secondary:hover {
-      border-color: rgba(199,125,255,0.26);
-      transform: translateY(-2px);
-    }
-
     .hero-points {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
     .hero-point {
@@ -269,49 +305,58 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       padding: 18px;
       overflow: hidden;
     }
 
     .logo-box img {
-      max-width: 100%;
-      width: 260px;
+      width: 240px;
       height: auto;
-      display: block;
-      margin: 0 auto;
       border-radius: 16px;
       opacity: 0.95;
     }
 
-    .stats {
+    .contact-highlight {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 12px;
       margin-top: 16px;
     }
 
-    .stat {
+    .contact-highlight-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 16px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 18px;
-      padding: 16px;
-      text-align: center;
     }
 
-    .stat strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--muted);
+    .mini-icon {
+      min-width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(157,78,221,0.14);
+      border: 1px solid rgba(199,125,255,0.25);
       font-size: 13px;
+      font-weight: 700;
+    }
+
+    .contact-highlight-item strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+
+    .contact-highlight-item span {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     section {
-      padding: 36px 0 82px;
+      padding: 34px 0 82px;
     }
 
     .section-title {
@@ -393,7 +438,7 @@
     .list-item {
       padding: 14px 16px;
       border-radius: 16px;
-      background: var(--card-2);
+      background: var(--card-soft);
       border: 1px solid rgba(255,255,255,0.06);
       color: var(--muted);
     }
@@ -403,7 +448,7 @@
       margin-top: 10px;
       padding: 10px 14px;
       border-radius: 14px;
-      background: rgba(157,78,221,0.1);
+      background: rgba(157,78,221,0.10);
       border: 1px solid rgba(199,125,255,0.18);
       color: #efdefd;
       font-size: 14px;
@@ -478,7 +523,7 @@
       align-items: flex-start;
       padding: 14px 16px;
       border-radius: 16px;
-      background: var(--card-2);
+      background: var(--card-soft);
       border: 1px solid rgba(255,255,255,0.06);
     }
 
@@ -523,7 +568,7 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 980px) {
       .hero-grid,
       .grid-3,
       .about-wrap,
@@ -531,17 +576,10 @@
         grid-template-columns: 1fr;
       }
 
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-inner {
+      .nav-inner,
+      .topbar-inner {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .brand-text span {
-        white-space: normal;
       }
 
       h1 {
@@ -551,7 +589,7 @@
 
     @media (max-width: 620px) {
       .hero {
-        padding-top: 52px;
+        padding-top: 56px;
       }
 
       .btn,
@@ -571,10 +609,26 @@
       .section-text {
         font-size: 16px;
       }
+
+      .brand-text span {
+        white-space: normal;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <div class="quick-pill">WhatsApp: 015129036718</div>
+        <div class="quick-pill">E-Mail: kontakt@vtx-service.de</div>
+      </div>
+      <div class="topbar-right">
+        <div class="quick-pill">Schnelle Rückmeldung</div>
+      </div>
+    </div>
+  </div>
+
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">
@@ -582,7 +636,7 @@
           <img src="VTX.png" alt="VTX Logo">
         </div>
         <div class="brand-text">
-          <strong>VTX Service</strong>
+          <strong>VTX Wüllner</strong>
           <span>IT & Technik Service</span>
         </div>
       </div>
@@ -592,7 +646,7 @@
         <a href="#offers">Angebote</a>
         <a href="#about">Über mich</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-cta">Kontakt</a>
+        <a href="#contact" class="nav-cta">Jetzt Kontakt</a>
       </div>
     </div>
   </nav>
@@ -602,32 +656,32 @@
       <div>
         <div class="eyebrow">
           <span class="dot"></span>
-          Technischer Service für PC & Laptop
+          PC, Laptop & Technik Hilfe
         </div>
 
         <h1>
           <span class="glow">VTX</span><br />
           IT & Technik<br />
-          Service
+          Wüllner
         </h1>
 
         <p>
-          Hilfe bei PC- und Laptop-Problemen – schnell, verständlich und ohne unnötigen Aufwand.
+          Hilfe bei PC- und Laptop-Problemen – sauber, verständlich und ohne unnötigen Aufwand.
         </p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://wa.me/4915129036718" target="_blank">
             Auf WhatsApp schreiben
           </a>
-          <a class="btn btn-secondary" href="#services">
-            Leistungen ansehen
+          <a class="btn btn-secondary" href="#contact">
+            Kontakt ansehen
           </a>
         </div>
 
         <div class="hero-points">
-          <div class="hero-point">Schnelle Rückmeldung</div>
+          <div class="hero-point">Persönlich</div>
+          <div class="hero-point">Unkompliziert</div>
           <div class="hero-point">Verständlich erklärt</div>
-          <div class="hero-point">Persönlich & unkompliziert</div>
         </div>
       </div>
 
@@ -636,18 +690,29 @@
           <img src="VTX.png" alt="VTX Logo">
         </div>
 
-        <div class="stats">
-          <div class="stat">
-            <strong>Diagnose</strong>
-            <span>Probleme klar erkennen</span>
+        <div class="contact-highlight">
+          <div class="contact-highlight-item">
+            <div class="mini-icon">WA</div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>015129036718</span>
+            </div>
           </div>
-          <div class="stat">
-            <strong>Reinigung</strong>
-            <span>Staub, Hitze, Lautstärke</span>
+
+          <div class="contact-highlight-item">
+            <div class="mini-icon">@</div>
+            <div>
+              <strong>E-Mail</strong>
+              <span>kontakt@vtx-service.de</span>
+            </div>
           </div>
-          <div class="stat">
-            <strong>Upgrades</strong>
-            <span>SSD, RAM & Optimierung</span>
+
+          <div class="contact-highlight-item">
+            <div class="mini-icon">VTX</div>
+            <div>
+              <strong>Direkter Kontakt</strong>
+              <span>Einfach schreiben und Problem kurz schildern</span>
+            </div>
           </div>
         </div>
       </div>
@@ -658,7 +723,7 @@
     <div class="container">
       <h2 class="section-title">Leistungen</h2>
       <p class="section-text">
-        Klare und sinnvolle Services für typische Technik-Probleme – sauber, verständlich und ohne unnötiges Drumherum.
+        Klare und sinnvolle Hilfe bei typischen Technik-Problemen – ohne unnötiges Gelaber und ohne Fachchinesisch.
       </p>
 
       <div class="grid-3">
@@ -682,7 +747,7 @@
           <span class="badge">Service 03</span>
           <h3>Windows Neuinstallation</h3>
           <p>
-            Sauberes Neuaufsetzen des Systems bei Software-Problemen oder starker Verlangsamung – damit alles wieder rund läuft.
+            Sauberes Neuaufsetzen des Systems bei Software-Problemen oder wenn das Gerät wieder stabil und flüssig laufen soll.
           </p>
         </div>
 
@@ -690,7 +755,7 @@
           <span class="badge">Service 04</span>
           <h3>SSD & RAM Upgrades</h3>
           <p>
-            Austausch oder Erweiterung passender Hardware, damit das Gerät schneller startet, flüssiger läuft und wieder mehr Reserven hat.
+            Passende Hardware-Upgrades, damit das Gerät schneller startet, flüssiger läuft und wieder mehr Reserven hat.
           </p>
         </div>
 
@@ -871,6 +936,9 @@
             <a class="btn btn-primary" href="https://wa.me/4915129036718" target="_blank">
               WhatsApp öffnen
             </a>
+            <a class="btn btn-secondary" href="mailto:kontakt@vtx-service.de">
+              E-Mail schreiben
+            </a>
           </div>
 
           <div class="contact-notes">
@@ -887,7 +955,7 @@
               <div class="icon">WA</div>
               <div>
                 <strong>WhatsApp</strong><br />
-                <span style="color:var(--muted);">Direkte Anfrage für Probleme, Fragen oder Rücksprache</span>
+                <span style="color:var(--muted);">015129036718</span>
               </div>
             </div>
 
@@ -910,7 +978,7 @@
             <div class="contact-item">
               <div class="icon">VTX</div>
               <div>
-                <strong>VTX Service</strong><br />
+                <strong>VTX Wüllner</strong><br />
                 <span style="color:var(--muted);">IT & Technik Service</span>
               </div>
             </div>
@@ -922,7 +990,8 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 VTX Service</div>
+      <div>© 2026 VTX Wüllner</div>
+      <div>kontakt@vtx-service.de</div>
     </div>
   </footer>
 </body>
